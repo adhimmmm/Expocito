@@ -138,7 +138,7 @@
 
     </section>
 
-    <x-scriptJs></x-scriptJs>
+        <script src="{{ asset('js/javascript.js') }}"></script>
 
 
 

@@ -163,16 +163,16 @@
                 <div class=" space-y-5">
                     <!-- Card 1 - Image Left -->
                     <div
-                        class="flex shadow-md border-2 border-white bg-white bg-opacity-0 rounded-lg text-gray-700 w-[750px] h-[270px] flex-row">
-                        <div class="w-[280px] h-[270px] overflow-hidden rounded-l-xl">
+                        class="flex shadow-md border-2 border-gray-200 bg-white bg-opacity-0 rounded-lg text-gray-700 w-[750px] h-[270px] flex-row">
+                        <div class="w-[280px] h-[265px] overflow-hidden rounded-l-xl">
                             <img src="{{ asset('img/waliKelas/noprofil.png') }}" alt="card-image"
                                 class="object-cover w-full h-full transition-transform duration-300 hover:scale-110" />
                         </div>
                         <div class="p-8 w-1/2">
-                            <h6 class="mb-2 text-lg font-semibold uppercase text-gray-700">Wali Kelas XII</h6>
+                            <h6 class="inline-block mb-1 text-lg font-semibold uppercase text-white rounded-md bg-primary-500 px-2 py-1">Wali Kelas XII</h6>
                             <h4 class="mb-4 text-3xl font-semibold text-blue-gray-900">Dra.Issetyowati
                             </h4>
-                            <p class="mb-6 text-lg text-gray-700">
+                            <p class="mb-5 text-2lg text-gray-700">
                                 <span>"Mengajar kimia bukan hanya tentang rumus dan persamaan, tetapi tentang
                                     mengajarkan
                                     cara
@@ -183,16 +183,16 @@
 
                     <!-- Card 2 - Image Right -->
                     <div
-                        class="flex shadow-md border-2 border-white bg-white bg-opacity-100 rounded-lg text-gray-700 w-[750px] h-[270px] flex-row">
-                        <div class="w-[280px] h-[270px] overflow-hidden rounded-l-xl">
+                        class="flex shadow-md border-2 border-gray-200 bg-white bg-opacity-100 rounded-lg text-gray-700 w-[750px] h-[270px] flex-row">
+                        <div class="w-[280px] h-[265px] overflow-hidden rounded-l-xl">
                             <img src="{{ asset('img/waliKelas/noprofil.png') }}" alt="card-image"
                                 class="object-cover w-full h-full transition-transform duration-300 hover:scale-110" />
                         </div>
                         <div class="p-8 w-1/2">
-                            <h6 class="mb-2 text-lg font-semibold uppercase text-gray-700">Wali Kelas XI</h6>
+                            <h6 class="inline-block mb-1 text-lg font-semibold uppercase text-white rounded-md bg-yellow-500 px-2 py-1">Wali Kelas XI</h6>
                             <h4 class="mb-4 text-3xl font-semibold text-blue-gray-900">Nurul Fitriani Ramdhani, S.pd,
                             </h4>
-                            <p class="mb-6 text-lg text-gray-700">
+                            <p class="mb-5 text-2lg text-gray-700">
                                 <span>"Matematika bukanlah tentang angka, rumus, atau persamaan. Matematika adalah seni
                                     berpikir
                                     logis, kreatif, dan melihat pola di balik kekacauan."</span>
@@ -202,15 +202,15 @@
 
                     <!-- Card 3 - Image Left -->
                     <div
-                        class="flex shadow-md border-2 border-white bg-white bg-opacity-0 rounded-lg text-gray-700 w-[750px] h-[270px] flex-row">
-                        <div class="w-[280px] h-[270px] overflow-hidden rounded-l-xl">
+                        class="flex shadow-md border-2 border-gray-200 bg-white0 bg-opacity-100 rounded-lg text-gray-700 w-[750px] h-[270px] flex-row">
+                        <div class="w-[280px] h-[265px] overflow-hidden rounded-l-xl">
                             <img src="{{ asset('img/waliKelas/noprofil.png') }}" alt="card-image"
                                 class="object-cover w-full h-full transition-transform duration-300 hover:scale-110" />
                         </div>
                         <div class="p-8 w-1/2">
-                            <h6 class="mb-2 text-lg font-semibold uppercase text-gray-700">Wali Kelas X</h6>
+                            <h6 class="inline-block mb-1 text-lg font-semibold uppercase text-white rounded-md bg-green-500 px-2 py-1">Wali Kelas X</h6>
                             <h4 class="mb-4 text-3xl font-semibold text-blue-gray-900">Rusmin, S.pd,</h4>
-                            <p class="mb-6 text-lg text-gray-700">
+                            <p class="mb-5 text-2lg text-gray-700">
                                 <span>"Matematika bukanlah tentang angka, rumus, atau persamaan. Matematika adalah seni
                                     berpikir
                                     logis, kreatif, dan melihat pola di balik kekacauan."</span>
@@ -280,9 +280,9 @@
     </div>
 
 
-    <section class="flex max-w-screen-2xl w-full mx-auto mt-5 ">
+    <section class="flex max-w-screen-2xl w-full mx-auto mt-3 mb-5">
         <div class=" mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+            <h1 class="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-4xl xl:font-extrabold">
                 Temukan lebih banyak kenangan kami
             </h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-10 md:text-lg lg:text-xl">
@@ -290,7 +290,7 @@
             </p>
 
             <a href="{{ route('dokumentasi') }}"
-                class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-900 focus:ring-4 focus:ring-red-300 transition-colors">
+                class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black rounded-lg hover:bg-blue-900 focus:ring-4 focus:ring-blue-900 transition-colors">
                 Dokumentasi
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -308,7 +308,7 @@
     <x-footer></x-footer>
 
 
-    <x-scriptJs></x-scriptJs>
+        <script src="{{ asset('js/home.js') }}"></script>
 
 </body>
 

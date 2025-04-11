@@ -34,7 +34,7 @@
                             aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('anggota') }}"
+                        <a href="{{ Request::is('anggota') ? '#anggotastart' : 'anggota' }}"
                             class="block py-2 pr-4 pl-3 text-2xl
                         {{ Request::is('anggota') ? ' lg:text-primary-600  hover:text-primary-900 duration-100'  : 'text-gray-700 hover:text-primary-900 ' }} dark:text-white"
                             aria-current="page">Anggota</a>

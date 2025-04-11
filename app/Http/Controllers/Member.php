@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member as ModelsMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use App\Models\Member as ModelsMember;
+use Illuminate\Support\Facades\Storage;
 
 class Member extends Controller
 {
@@ -17,8 +19,13 @@ class Member extends Controller
         })->paginate(10);
 
         if ($request->ajax()) {
-            return view('partials.member-list', compact('members'))->render();
+            $html = view('partials.member-list', compact('members'))->render();
+            return response()->json([
+                'html' => $html,
+                'pagination' => $members->links()->render(),
+            ]);
         }
+
 
         return view('anggota', compact('members'));
     }
@@ -26,24 +33,15 @@ class Member extends Controller
 
 
 
-
     public function dokumentasi() {
-        return view('dokumentasi');
+        $path = public_path('img/fotosma');
+        $files = collect(File::files($path))->map(function ($file) {
+            return asset('img/fotosma/' . $file->getFilename());
+        });
+
+        return view('dokumentasi', ['images' => $files]);
     }
 
 
-    //function untuk mencari data
-    public function search(Request $request) {
-
-        $search = $request->input('search');
-
-        $data = ModelsMember::when($search, function ($query, $search) {
-            return $query->where('nama', 'like', "%{$search}%");
-        })->paginate(10)->withQueryString();
-
-
-        return view('anggota', compact('data'));
-
-    }
 
 }
