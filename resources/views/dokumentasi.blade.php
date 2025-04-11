@@ -62,65 +62,62 @@
         </div>
     </div>
 
-    <div class=" max-w-screen-2xl mx-auto">
+    <div class="max-w-screen-2xl mx-auto" x-data="{ modalOpen: false, modalImage: '' }">
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3">
             @foreach ($images as $image)
                 <div class="group cursor-pointer relative">
-                    <img src="{{ $image }}" alt="Image 1"
-                        class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105" />
+                    <img loading="lazy" src="{{ $image }}" alt="Image"
+                        class="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
+                        @click="modalImage = '{{ $image }}'; modalOpen = true" />
                     <div
                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <!-- Button View -->
-                        <button
-                            class="viewButton bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-                            data-image="{{ $image }}">
+                        <button class="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                            @click="modalImage = '{{ $image }}'; modalOpen = true">
                             View
                         </button>
                     </div>
                 </div>
             @endforeach
-        </div> <!-- Tutup grid -->
+        </div>
 
-        <!-- Modal di luar foreach -->
-        <div id="imageModal"
-            class="fixed inset-0 bg-black bg-opacity-70 items-center justify-center z-50 hidden transition-opacity duration-300 ease-in-out">
+        <!-- Modal -->
+        <div x-show="modalOpen" x-transition
+            class="fixed inset-0 bg-black bg-opacity-70 items-center justify-center z-50 flex"
+            @click.self="modalOpen = false" style="display: none;">
             <div class="relative max-w-4xl w-full px-4">
-                <!-- Tombol Close -->
-                <button id="closeModal" type="button"
-                    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span class="sr-only">Close menu</span>
-                    <!-- Heroicon name: outline/x -->
+                <button @click="modalOpen = false"
+                    class="absolute top-4 right-4 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <!-- Gambar yang ditampilkan -->
-                <img id="modalImage" src="" alt="Preview"
-                    class="w-full max-h-[80vh] object-contain rounded-lg">
+                <img :src="modalImage" alt="Preview" class="w-full max-h-[80vh] object-contain rounded-lg">
             </div>
         </div>
+    </div>
 
 
-        <div class="max-w-screen-2xl mx-auto mt-12  text-start">
-            <div class="w-full mx-auto">
-                <h1 class="text-4xl font-bold mt-2 mb-6">"Potret Masa SMA: Saat-Saat Penuh Warna dalam Bingkai
-                    Kenangan"
-                </h1>
-                <p class="leading-relaxed">Ada sesuatu yang istimewa dari foto masa SMA—senyum polos, tawa renyah, dan
-                    tatapan penuh mimpi yang terbingkai dalam satu potret sederhana. Waktu itu mungkin terasa biasa saja
-                    saat kita menjalani hari-hari di sekolah, namun kini, setiap detail kecilnya menjadi begitu
-                    berharga. Di balik pose kaku atau seragam yang sama, tersimpan jejak langkah kita yang dulu masih
-                    belajar, bermimpi, dan berani mencoba. Itulah kenangan yang selalu layak untuk dikenang dan
-                    dirindukan.
-                </p>
-                <div class="mt-5 mb-5">
-                    <a class="inline-block py-4 px-8 leading-none text-white bg-slate-800 hover:bg-blue-900 rounded shadow text-sm font-bold"
-                        href="#">Selengkapnya</a>
-                </div>
+
+    <div class="max-w-screen-2xl mx-auto mt-12  text-start">
+        <div class="w-full mx-auto">
+            <h1 class="text-4xl font-bold mt-2 mb-6">"Potret Masa SMA: Saat-Saat Penuh Warna dalam Bingkai
+                Kenangan"
+            </h1>
+            <p class="leading-relaxed">Ada sesuatu yang istimewa dari foto masa SMA—senyum polos, tawa renyah, dan
+                tatapan penuh mimpi yang terbingkai dalam satu potret sederhana. Waktu itu mungkin terasa biasa saja
+                saat kita menjalani hari-hari di sekolah, namun kini, setiap detail kecilnya menjadi begitu
+                berharga. Di balik pose kaku atau seragam yang sama, tersimpan jejak langkah kita yang dulu masih
+                belajar, bermimpi, dan berani mencoba. Itulah kenangan yang selalu layak untuk dikenang dan
+                dirindukan.
+            </p>
+            <div class="mt-5 mb-5">
+                <a class="inline-block py-4 px-8 leading-none text-white bg-slate-800 hover:bg-blue-900 rounded shadow text-sm font-bold"
+                    href="#">Selengkapnya</a>
             </div>
         </div>
+    </div>
     </div>
 
 

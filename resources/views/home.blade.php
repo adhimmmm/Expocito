@@ -248,15 +248,15 @@
                 <div class="absolute inset-0 opacity-100 transition-opacity duration-700 ease-in-out"
                     data-carousel-item>
                     <img src="{{ asset('img/galery/DSC02003.jpg') }}" class="object-cover w-full h-full"
-                        alt="Slide 1">
+                        alt="Slide 1" loading="lazy">
                 </div>
                 <div class="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out" data-carousel-item>
                     <img src="{{ asset('img/galery/DSC02108.jpg') }}" class="object-cover w-full h-full"
-                        alt="Slide 2">
+                        alt="Slide 2" loading="lazy">
                 </div>
                 <div class="absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out" data-carousel-item>
                     <img src="{{ asset('img/galery/DSC02164.jpg') }}" class="object-cover w-full h-full"
-                        alt="Slide 3">
+                        alt="Slide 3" loading="lazy">
                 </div>
             </div>
             <!-- Slider controls -->
