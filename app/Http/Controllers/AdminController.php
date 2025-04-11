@@ -10,9 +10,17 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    public function admin()
+    public function admin(Request $request)
     {
-        $anggota = Member::paginate(7);
+
+        $search = $request->input('search');
+
+        $anggota = Member::when($search, function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%')
+                ->orWhere('kampus', 'like', '%' . $search . '%')
+                ->orWhere('moto', 'like', '%' . $search . '%');
+        })->orderBy('nama')->paginate(5);
+
 
         return view('admin', compact('anggota'));
     }
